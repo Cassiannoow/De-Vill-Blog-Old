@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<title>Blog_Devil</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/EstiloC.css">
+
+</head>
+
+<body>
+
+<br>
+<br>
+
+
+<div class="mobile"><br><br>
+  <div class="topnav">
+    <a  onclick="openNav()"> 
+    <ion-icon name="reorder-three-outline" style="font-size: 26px;">
+     </ion-icon> </button></a>
+ 
+
+
+    <div class="dropdown">
+      
+     <a class="dropbtn">   
+       <ion-icon name="person-circle-outline" style="font-size:25px;">  <i class="fa fa-caret-down"></i></ion-icon> 
+      </a> 
+    
+      
+        
+      </button>
+      
+      <div class="dropdown-content">
+        <a href="/Login">Login</a>
+        <a href="/Membro">Membro</a>
+        <a href="/Perfil">Perfil</a>
+      
+      </div><!--DropdownCotnet-->
+    
+
+
+ </div><!--TopoNavegador-->
+</div><!--mobile-->
+<br>
+
+        <div class="sidebar" id="Sb">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+         <a href="/Noticias">Noticias</a>
+         <a href="/Destaques">Destaque</a>
+        <a href="/">Home</a>
+        </div><!--SideBar-->
+
+
+
+  <div class="Meio">
+
+     <div class="quadrado">
+      <h1 id="tituloForm">FAÇA SEU CADASTRO</h1>
+
+     
+      
+
+      <div class="contem">
+        <form action="/incluirUsuario" method="POST">
+          <div class="row">
+           <div class="col-75">
+            <input name="username" type="text" id="lname" placeholder="Seu nome..">
+            
+           </div> <br><br>
+
+
+           <div class="col-75">
+            <input name="email" type="email" id="lemail"  placeholder="Seu email..">
+           </div><br><br>
+
+          
+
+           <div class="col-75">
+            <input name="password" type="password" id="isenha"   placeholder="Seu senha..">
+           </div><br><br>
+
+
+           /* <div class="col-75">
+            <input type="password" id="isenha"  placeholder="confirme sua ..">
+           </div>*/<br><br>
+
+            <br><input type="submit" value="Cadastrar">
+
+          </div><!--Row-->
+       </form>
+
+      
+
+      </div><!--Forms-->
+    
+  
+
+     </div><!--quadarado-->
+
+
+  </div><!--Meio-->
+
+  <div class="Rodapé">
+
+   <footer>
+    <ion-icon name="logo-instagram" style="font-size: 20px;margin-top: 20px;"></ion-icon>
+    <a href="mailto:Devil@instagram.com">Devil@instagram.com</a></p>
+
+    <ion-icon name="mail-outline" style="font-size: 20px;"></ion-icon>
+    <a href="mailto:Devil@gmail.com">Devil@gmail.com</a></p>
+
+    <ion-icon name="logo-twitter" style="font-size: 20px;"></ion-icon>
+    <a href="mailto:Devil@twiter.com">Devil@twiter.com</a></p>
+
+  
+     <h1 style="display: flexbox; flex-direction: row;">DeVil</h1>     
+
+   </footer>
+
+  </div><!--footer-->
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!--PermissãoModulo-->
+  <script>
+    function openNav() {
+      document.getElementById("Sb").style.width = "250px";
+      document.getElementById("topnav").style.marginLeft = "250px";
+      document.getElementsByClassName("sumir")  
+      }
+    
+    function closeNav() {
+      document.getElementById("Sb").style.width = "0";
+      document.getElementById("topnav").style.marginLeft= "0";
+    }
+
+    function sumir()
+   { 
+    var x = document.getElementById('links');
+    if(x.style.display === 'block') 
+      {
+        x.style.display = 'none';
+      }
+      else{
+        x.style.display = 'block'
+      }
+   }
+
+
+    </script>
+  
+
+
+
+</body>
+</html>
+

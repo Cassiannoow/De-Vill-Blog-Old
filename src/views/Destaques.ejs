@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/stylesheets/EstiloD.css">
+</head>
+<body>
+
+
+  <div class="mobile"><br><br>
+   <div class="topnav">
+     <a  onclick="openNav()"> 
+     <ion-icon name="reorder-three-outline" style="font-size: 26px;">
+      </ion-icon> </button></a>
+  
+     <a href="/Noticias" class="links" onclick="">Noticias</a> 
+     <a href="/" class="links">Home</a>  
+     <a href="/Destaques" class="links">Destaque</a> 
+ 
+     <div class="dropdown">
+       
+      <a class="dropbtn">   
+        <ion-icon name="person-circle-outline" style="font-size:25px;">  <i class="fa fa-caret-down"></i></ion-icon> 
+       </a> 
+     
+       
+         
+       </button>
+       
+       <div class="dropdown-content">
+        <a href="/Login">Login</a>
+         <a href="/Cadastro">Cadastro</a>
+         <a href="/Perfil">Perfil</a>
+ 
+     </div><!--DropdownCotnet-->
+     
+ 
+ 
+  </div><!--TopoNavegador-->
+ </div><!--mobile-->
+
+ <div class="sidebar" id="Sb">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+  <a href="/">Home</a>
+  <a href="/Noticias">Noticias</a>
+  <a href="/Destaques">Destaque</a>
+
+ </div><!--SideBar-->
+ <br>
+ <div class="barra">
+   <form>
+     <input type="text" name="search" placeholder="Search..">
+   </form>
+ </div><!--Barra--> <br><br><br><br>
+ 
+        
+ 
+    <div class="left">
+   
+     <div class="card">
+
+     </div>
+
+    </div>
+
+    <div class="right">
+
+      <div class="contem">
+
+      </div>
+    </div>
+
+
+  <div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+    </div><!--Pagination-->
+
+
+
+
+
+
+
+
+
+      
+ 
+
+
+  <div class="footer"><br><br><br><br><br><br><br><br><br><br>
+
+    <footer>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <a href="mailto:Devil@instagram.com" >Devil@instagram.com</a></p>
+  
+      <ion-icon name="mail-outline" ></ion-icon>
+      <a href="mailto:Devil@gmail.com"  >Devil@gmail.com</a></p>
+  
+      <ion-icon name="logo-twitter"  ></ion-icon>
+      <a href="mailto:Devil@twiter.com" >Devil@twiter.com</a></p>
+  
+      <div id="logo">
+        <h1>DeVil</h1>     
+      </div>
+
+    </footer>
+
+  </div><!--footer-->
+
+
+
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <!--PermissãoModulo-->
+
+   <script>
+    function openNav() {
+      document.getElementById("Sb").style.width = "250px";
+      document.getElementById("topnav").style.marginLeft = "250px";
+      document.getElementsByClassName("sumir")  
+      }
+    
+    function closeNav() {
+      document.getElementById("Sb").style.width = "0";
+      document.getElementById("topnav").style.marginLeft= "0";
+    }
+
+    function sumir()
+   { 
+    var x = document.getElementById('links');
+    if(x.style.display === 'block') 
+      {
+        x.style.display = 'none';
+      }
+      else{
+        x.style.display = 'block'
+      }
+   }
+
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+
