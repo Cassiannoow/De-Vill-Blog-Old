@@ -15,7 +15,7 @@ exports.Destaques = ('/Destaques.ejs', async(req, res) => {
 exports.home = ('/', async(req, res) => {
     res.render('Home')
 })
-exports.Login = ('Login.ejs', async(req, res) =>{
+exports.Login = ('/Login.ejs', async(req, res) =>{
     res.render('Login')
 })
 exports.Membro = ('/Membro.ejs', async(req, res) => {
@@ -40,11 +40,11 @@ exports.Perfil = ('/Perfil.ejs', async(req, res) => {
 })*/
 /* GET Incluir novo usuário. */
 
-exports.incluir = ('/incluirUsuario',async(req,res) => {
+exports.incluir = ('/incluirUsuario', async(req,res) => {
     let username = req.body.username
     let email = req.body.email
     let password = req.body.password
-    let member = 0
+    let member = '0'
     let usuario = new Users({username,email,password,member})
     try{
         await usuario.save()
@@ -55,7 +55,7 @@ exports.incluir = ('/incluirUsuario',async(req,res) => {
     }
 })
 
-exports.loging = ('/LoginAuth', async(req, res) =>{
+exports.loging = ('/LoginAuth', (req, res) =>{
     let email = req.params.email
     let password = req.params.password
 
