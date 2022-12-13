@@ -1,169 +1,114 @@
 
 <html>
- <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Blog_Moda</title>
-      
-      <link rel="stylesheet" href="/stylesheets/EstiloNc.css">
-
- </head>
-  <body>
-  
- <div class="mobile"><br><br>
-  <div class="topnav">
-    <a <button  onclick="openNav()"> 
-    <ion-icon name="reorder-three-outline" style="font-size: 26px;">
-     </ion-icon> </button></a>
- 
- 
-
-    <div class="dropdown">
-      
-     <a <button class="dropbtn">   
-       <ion-icon name="person-circle-outline" style="font-size:25px;">  <i class="fa fa-caret-down"></i></ion-icon> 
-      </a> 
-    
-      
+  <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog_Moda</title>
         
-      </button>
-      
-      <div class="dropdown-content">
-        <a href="/Login">Login</a>
-        <a href="/Cadastro">Cadastro</a>
-        <a href="/Perfil">Perfil</a>
+        <link rel="stylesheet" href="/stylesheets/EstiloNc.css">
 
-    </div><!--DropdownCotnet-->
-    
+  </head>
+<body>
+  <div class="mobile"><br><br>
+    <div class="topnav">
+      <a onclick="openNav()"> 
+      <ion-icon name="reorder-three-outline" style="width: 100%; height: 5%;">
+        </ion-icon> </a>
+      <div class="dropdown">
+        <a class="dropbtn">   
+          <ion-icon name="person-circle-outline" style="height: 5%;">  <i class="fa-caret-down"></i></ion-icon> 
+        </a>
+        <div class="dropdown-content">
+          <a href="/Login">Login</a>
+          <a href="/Cadastro">Cadastro</a>
+          <a href="/Perfil">Perfil</a>
+        </div><!--DropdownCotnet-->
+      </div><!--TopoNavegador-->
+    </div><!--mobile--><br>
+  </div>
 
+  <div class="sidebar" id="Sb">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+    <a href="/">Home</a>
+    <a href="/Noticias">Noticias</a>
+    <a href="/Destaques">Destaque</a>
+  </div><!--SideBar-->
 
-    </div><!--TopoNavegador-->
-    </div><!--mobile-->
-    <br>
+  </div class="contem">
+      <div class="row">
+        <div class="leftcolumn">
+          <%
+            ListaPosts.forEach((esquemaUsers) =>{
+            %>
+            <div class="card">
+              <h2><%=esquemaUsers.title%></h2>
 
-    <div class="sidebar" id="Sb">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-      <a href="/Noticias">Noticias</a>
-      <a href="/Destaques">Destaque</a>
-      <a href="/">Home</a>
-     </div><!--SideBar-->
+              <h5> Data da publicação: <%=esquemaUsers.date%></h5>
 
-    <div class="barra">
-      <form>
-        <input type="text" name="search" placeholder="Search..">
-      </form>
-  </div><!--Barra--> <br><br><br><br>
+              <img src="<%=esquemaUsers.iamge%>" style="width: 100%; height: 25%;" >
 
-     
+              <p><%=esquemaUsers.title%></p>
 
-   </div class="contem">
-
-     <div class="row">
-
-       <div class="leftcolumn">
-
-         <div class="card">
-
-           <h2>Título da Noticia</h2>
-
-           <h5> Data da publicação: Dec 7, 2017</h5>
-
-           <div class="fakeimg" style="height:200px;">Image</div>
-
-           <p>texto sobre noticia </p>
-
-           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolor
-            e magna aliqua. 
-            
-            Ut enim ad minim veniam, quis nostr
-            ud exercitation ullamco.</p>
-          </div><!--cardp--> <br>
-
+              <p><%=esquemaUsers.description%></p>
+            </div><!--cardp--> <br>
+          <% }) %>
+        </div><!--colunaEsquerda-->
+        <div class="rightcolumn">
           <div class="card">
-
-           <h2>Título da Noticia</h2>
-
-           <h5> Data da publicação: Dec 7, 2017</h5>
-
-           <div class="fakeimg" style="height:200px;">Image</div>
-
-           <p>texto sobre noticia </p>
-
-           <p>Sunt in culpa qui officia deserunt mollit anim id est
-            laborum consectetur adipiscing elit, sed do eiusmod tem
-            por incididunt ut labore et dolore magna aliqua. Ut enim 
-            ad minim veniam, quis nostrud exercitation ullamco.</p>
-         </div><!--cardp2-->
-
-       </div><!--colunaEsquerda-->
-
-       <div class="rightcolumn">
-
-         <div class="card">
-  
-
-        <a href="/Cadastro" style="font-size: large;"><img src="" alt="">Cadastre</a>
-       
+            <a href="/Cadastro" style="font-size: large;">Cadastre</a>
           </div><!--card1-->
 
           <div class="card">
+            <h3>Popular Post</h3>
+            <%
+            for(var i = 0; i < 2; i++){
+            %>
+              <img src="<%=ListaPosts[i].iamge%>" style="width: 100%; height: 25%; margin-bottom: 5px;">
+            <% } %>
+          </div><!--card2-->
 
-           <h3>Popular Post</h3>
+          <div class="card">
+            <h3>Follow Me</h3>
 
-           <div class="fakeimg"><p>Image</p></div><br>
-           <div class="fakeimg"><p>Image</p></div><br>
-           <div class="fakeimg"><p>Image</p></div><br>
+            <p>Some text..</p>
 
-         </div><!--card2-->
-
-         <div class="card">
-
-          <h3>Follow Me</h3>
-
-          <p>Some text..</p>
-
-        </div><!--card3-->
-
-      </div><!--Row-->
-
-    </div><!--Contem-->
-    
+          </div><!--card3-->
+        
+        </div><!--rightcolumn-->
+      </div><!--row-->
+    </div><!--contem-->
     <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
-    </div><!--Pagination-->
-
-
+          <a href="#1">&laquo;</a>
+          <a href="#1">1</a>
+          <a href="#2">2</a>
+          <a href="#3">3</a>
+          <a href="#4">4</a>
+          <a href="#5">5</a>
+          <a href="#6">6</a>
+          <a href="#6">&raquo;</a>
+        </div><!--Pagination-->
     <div class="footer">
-
       <footer>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <a href="mailto:Devil@instagram.com" >Devil@instagram.com</a></p>
-    
-        <ion-icon name="mail-outline" ></ion-icon>
-        <a href="mailto:Devil@gmail.com"  >Devil@gmail.com</a></p>
-    
-        <ion-icon name="logo-twitter"  ></ion-icon>
-        <a href="mailto:Devil@twiter.com" >Devil@twiter.com</a></p>
-    
-        <div id="logo">
-          <h1>DeVil</h1>     
-        </div>
-  
+        <div class="links-social-redes">
+          <div class="icons">
+            <ion-icon class="icons" name="logo-instagram" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@instagram.com">@DeVillBlog</a>
+          </div>
+          <div class="icons">
+            <ion-icon class="icons" name="mail-outline" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@gmail.com">DeVill@gmail.com</a>
+          </div>
+          <div class="icons">
+            <ion-icon class="icons" name="logo-twitter" style="color: white; margin: 0;"></ion-icon>
+          <a href="mailto:Devil@twiter.com">@DeVillBlog</a>
+          </div>
+          </div>
+          <div id="logo">
+            <h1 style="color: white;">DE VILL</h1>
+          </div>
       </footer>
-  
     </div><!--footer-->
-
-
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -180,10 +125,8 @@
         document.getElementById("Sb").style.width = "0";
         document.getElementById("topnav").style.marginLeft= "0";
       }
-  
-  
-      </script>
 
 
+    </script>
   </body>
 </html>

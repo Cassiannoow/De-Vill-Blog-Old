@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog-Devil</title>
-
     <link rel="stylesheet" href="/stylesheets/EstiloT.css">
 </head>
 <body>
@@ -13,14 +12,14 @@
   <div class="mobile"><br><br>
     <div class="topnav">
       <a  onclick="openNav()"> 
-      <ion-icon name="reorder-three-outline" style="font-size: 26px;">
+      <ion-icon name="reorder-three-outline" style="width: 100%; height: 5%;">
        </ion-icon> </button></a>
    
 
       <div class="dropdown">
         
        <a class="dropbtn">   
-         <ion-icon name="person-circle-outline" style="font-size:25px;">  <i class="fa fa-caret-down"></i></ion-icon> 
+         <ion-icon name="person-circle-outline" style="height: 5%;">  <i class="fa fa-caret-down"></i></ion-icon> 
         </a> 
       
         
@@ -42,150 +41,52 @@
  
   <div class="sidebar" id="Sb">
    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+   <a href="/">Home</a>
    <a href="/Noticias">Noticias</a>
    <a href="/Destaques">Destaque</a>
-   <a href="/">Home</a>
  
   </div><!--SideBar-->
-  <br>
-  <div class="barra">
-    <form>
-      <input type="text" name="search" placeholder="Search..">
-    </form>
-  </div><!--Barra--> <br><br><br><br>
-  
-
-  
-    <h1 id="Titulo">SEU PERFIL</h1>
-
-    <div class="fakeimg" ><div>image</div></div><br><br>
-
+    
      <div class="quadrado">
-      <h3>SUA DESCRIÇÃO</h3>
-
+        <h1 id="Titulo"><%=user.username%> <%=user.member%></h1>
+        <img src="<%=user.image%>" alt="">
+        <form action="/alterarImagem" method="POST">
+          <input name="image" type="text" id="lname" placeholder="<%=user.image%>">
+          <input type="submit" value="Trocar Foto">
+        </form>
+        <h3>DADOS PESSOAIS</h3>
+        <form action="/alterarUsuario" method="POST">
+          <div class="input">
+            <input name="username" type="text" id="username" placeholder="<%=user.username%>">
+          </div>
+          <div class="input">
+            <input name="email" type="email" id="email" placeholder="<%=user.email%>">
+          </div>
+          <input type="submit" value="Alterar">
+        </form>
      </div><br>
 
-    <h2 id="mn">Seus blogs:</h2>
-
-      <div class="leftColum" style="display: flex; flex-direction: row; gap: 20px;">
-        <div class="flip-card">
-  
-          <div class="flip-card-inner">
-  
-            <div class="flip-card-front">
-  
-              <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-  
-            </div>
-  
-            <div class="flip-card-back">
-  
-              <h1>Titulo do blog</h1>
-  
-              <p>Data de Publicação: dec 22</p>
-  
-              <p>Descrição do Blog</p>
-  
-            </div>
-  
+     <div class="footer">
+      <footer>
+        <div class="links-social-redes">
+          <div class="icons">
+            <ion-icon class="icons" name="logo-instagram" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@instagram.com">@DeVillBlog</a>
           </div>
-  
-        </div>
-  
-        <div class="flip-card">
-  
-          <div class="flip-card-inner">
-  
-            <div class="flip-card-front">
-  
-              <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-  
-            </div>
-  
-            <div class="flip-card-back">
-  
-              <h1>Titulo do blog</h1>
-  
-              <p>Data de Publicação: dec 22</p>
-  
-              <p>Descrição do Blog</p>
-            </div>
-  
+          <div class="icons">
+            <ion-icon class="icons" name="mail-outline" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@gmail.com">DeVill@gmail.com</a>
           </div>
-  
-  
-        </div>
-  
-        <div class="flip-card">
-  
-          <div class="flip-card-inner">
-  
-            <div class="flip-card-front">
-  
-              <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-  
-            </div>
-  
-            <div class="flip-card-back">
-  
-              <h1>Titulo do blog</h1>
-  
-              <p>Data de Publicação: dec 22</p>
-  
-              <p>Descrição do Blog</p>
-  
-            </div>
-  
+          <div class="icons">
+            <ion-icon class="icons" name="logo-twitter" style="color: white; margin: 0;"></ion-icon>
+          <a href="mailto:Devil@twiter.com">@DeVillBlog</a>
           </div>
-  
-        </div>
-
-        <div class="flip-card">
-  
-          <div class="flip-card-inner">
-  
-            <div class="flip-card-front">
-  
-              <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-  
-            </div>
-  
-            <div class="flip-card-back">
-  
-              <h1>Titulo do blog</h1>
-  
-              <p>Data de Publicação: dec 22</p>
-  
-              <p>Descrição do Blog</p>
-            </div>
-  
           </div>
-  
-  
-        </div>
-  
-      </div>
-
-      <div class="footer"><br><br><br><br><br><br><br><br><br><br>
-
-        <footer>
-          <ion-icon name="logo-instagram"></ion-icon>
-          <a href="mailto:Devil@instagram.com" >Devil@instagram.com</a></p>
-      
-          <ion-icon name="mail-outline" ></ion-icon>
-          <a href="mailto:Devil@gmail.com"  >Devil@gmail.com</a></p>
-      
-          <ion-icon name="logo-twitter"  ></ion-icon>
-          <a href="mailto:Devil@twiter.com" >Devil@twiter.com</a></p>
-      
           <div id="logo">
-            <h1>DeVil</h1>     
+            <h1 style="color: white;">DE VILL</h1>
           </div>
-
-        </footer>
-
-      </div><!--footer-->
-
+      </footer>
+    </div><!--footer-->
 
 
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -216,17 +117,6 @@
               x.style.display = 'block'
             }
         }
-
-
       </script>
-
-
-
-         
-  
-
-
-
-
 </body>
 </html>

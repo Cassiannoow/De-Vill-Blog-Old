@@ -1,256 +1,161 @@
-
 <html lang="pt-br">
+  <head>
+    <title>Blog_Devil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/EstiloH.css">
+  </head>
 
-<head>
-
-  <title>Blog_Devil</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="/stylesheets/EstiloH.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-
-
-  <div class="mobile"><br><br>
-    <div class="topnav">
-      <a onclick="openNav()">
-        <ion-icon name="reorder-three-outline" style="font-size: 26px;">
-        </ion-icon> </button>
-      </a>
-
-
-      <div class="dropdown">
-
-        <a class="dropbtn">
-          <ion-icon name="person-circle-outline" style="font-size:25px;"> <i class="fa fa-caret-down"></i></ion-icon>
+  <body>
+    <div class="mobile"><br><br>
+      <div class="topnav">
+        <a onclick="openNav()">
+          <ion-icon name="reorder-three-outline" style="width: 100%; height: 5%;">
+          </ion-icon>
         </a>
 
+        <div class="dropdown">
+          <a class="dropbtn">
+            <ion-icon name="person-circle-outline" style="height: 5%;"> <i class="fa-caret-down"></i></ion-icon>
+          </a>
 
+          <div class="dropdown-content">
+            
+            <a href="/Login">Login</a>
+            <a href="/Perfil">Perfil</a>
+            <a href="/Membro">Membro</a>
 
-        </button>
-
-        <div class="dropdown-content">
-          
-          <a href="/Login">Login</a>
-          <a href="/Perfil">Perfil</a>
-          <a href="/Membro">Membro</a>
-
+          </div>
+          <!--DropdownCotnet-->
         </div>
-        <!--DropdownCotnet-->
-
-
-
+        <!--TopoNavegador-->
       </div>
-      <!--TopoNavegador-->
     </div>
-    <!--mobile-->
-    <br>
-    <div class="barra">
-      <form>
-        <input type="text" name="search" placeholder="Search..">
-      </form>
-    </div>
-    <!--Barra--> <br><br><br><br>
+      <!--mobile-->
+      <!--<div class="barra">
+        <form>
+          <input type="text" name="search" placeholder="Search..">
+        </form>
+      </div><br><br><br><br><br><br><br><br>-->
+      <!--Barra-->
 
     <div class="sidebar" id="Sb">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+      <a href="/">Home</a>
       <a href="/Noticias">Noticias</a>
       <a href="/Destaques">Destaque</a>
-      <a href="/">Home</a>
     </div>
-    <!--SideBar-->
+      <!--SideBar-->
 
-
-    <div class="quadrado">
+    <div class="quadrado"><!--PAiNEl Principal-->
 
     </div>
 
     <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">O</a>
-      <a href="#">O</a>
-      <a href="#">O</a>
-      <a href="#">O</a>
-      <a href="#">O</a>
-      <a href="#">O</a>
-      <a href="#">&raquo;</a>
+      <a href="#0">&laquo;</a>
+      <a href="#0">O</a>
+      <a href="#1">O</a>
+      <a href="#2">O</a>
+      <a href="#3">O</a>
+      <a href="#4">O</a>
+      <a href="#5">O</a>
+      <a href="#5">&raquo;</a>
     </div>
-    <!--Pagination--><br><br><br><br>
+    <!--Pagination--><br><br>
 
-    <p id="pb">Pré-História (do surgimento dos primeiros seres humanos até 3.500 a.C.)
-      Com o predomínio da caça e pesca, as roupas eram feitas do couro dos animais.
-      A partir da invenção do tear (aparelho que permite fazer tecidos),
-      no fim desta era, as peles de animais deram lugar a roupas de tecido.</p>
+      <p id="pb">Pré-História (do surgimento dos primeiros seres humanos até 3.500 a.C.)
+        Com o predomínio da caça e pesca, as roupas eram feitas do couro dos animais.
+        A partir da invenção do tear (aparelho que permite fazer tecidos),
+        no fim desta era, as peles de animais deram lugar a roupas de tecido.</p>
 
     <div class="recentes">
-      <h1 id="r">RECENTES</h1>
+      <h1 id="r">LOOKS EM TENDENCIA</h1>
     </div><br><br>
 
 
-    <div class="leftColum" style="display: flex; flex-direction: row; gap: 20px;">
-      <div class="flip-card">
-
-        <div class="flip-card-inner">
-
-          <div class="flip-card-front">
-
-            <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-
-          </div>
-
-          <div class="flip-card-back">
-
-            <h1>Titulo do blog</h1>
-
-            <p>Data de Publicação: dec 22</p>
-
-            <p>Descrição do Blog</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="flip-card">
-
-        <div class="flip-card-inner">
-
-          <div class="flip-card-front">
-
-            <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-
-          </div>
-
-          <div class="flip-card-back">
-
-            <h1>Titulo do blog</h1>
-
-            <p>Data de Publicação: dec 22</p>
-
-            <p>Descrição do Blog</p>
-          </div>
-
-        </div>
-      </div>
-
-
-         <div class="flip-card">
+    <div class="leftColum">
+      <%
+          ListaPosts.forEach((esquemaUsers) =>{
+          %>
+          <div class="flip-card">
 
             <div class="flip-card-inner">
-
-               <div class="flip-card-front">
-
-                 <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-
-               </div>
-
-           <div class="flip-card-back">
-
-             <h1>Titulo do blog</h1>
-
-             <p>Data de Publicação: dec 22</p>
-
-             <p>Descrição do Blog</p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="flip-card">
-
-          <div class="flip-card-inner">
-
-             <div class="flip-card-front">
-
-               <img src="img_avatar.png" alt="Blog" style="width:300px;height:300px;">
-
-             </div>
-
-         <div class="flip-card-back">
-
-           <h1>Titulo do blog</h1>
-
-           <p>Data de Publicação: dec 22</p>
-
-           <p>Descrição do Blog</p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-
-      </div>
-    
+              <div class="flip-card-front">
+                <h1><%= esquemaUsers.title %></h1>
+                <img src="<%= esquemaUsers.iamge %> " style="width: 100%; height: 100%;" >
+              </div>
+  
+              <div class="flip-card-back">
+                <h1>
+                  <%= esquemaUsers.title %>
+                </h1>
+                <p>Data de Publicação: 
+                  <%= esquemaUsers.date %>
+                </p>
+                <p>
+                  <%= esquemaUsers.description %>
+                </p>
+              </div><!--flip-card-back-->
+  
+            </div><!--flip-card-inner-->
+  
+          </div><!--flip-card-->
+        <% }) %>
+    </div><!--Left-Collumn-->
+      
 
     <div class="footer">
-
       <footer>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <a href="mailto:Devil@instagram.com">Devil@instagram.com</a></p>
-
-        <ion-icon name="mail-outline"></ion-icon>
-        <a href="mailto:Devil@gmail.com">Devil@gmail.com</a></p>
-
-        <ion-icon name="logo-twitter"></ion-icon>
-        <a href="mailto:Devil@twiter.com">Devil@twiter.com</a></p>
-
-        <div id="logo">
-          <h1>DeVil</h1>
+        <div class="links-social-redes">
+          <div class="icons">
+            <ion-icon class="icons" name="logo-instagram" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@instagram.com">@DeVillBlog</a>
+          </div>
+          <div class="icons">
+            <ion-icon class="icons" name="mail-outline" style="color: white; margin: 0;"></ion-icon>
+            <a href="mailto:Devil@gmail.com">DeVill@gmail.com</a>
+          </div>
+          <div class="icons">
+            <ion-icon class="icons" name="logo-twitter" style="color: white; margin: 0;"></ion-icon>
+          <a href="mailto:Devil@twiter.com">@DeVillBlog</a>
+          </div>
         </div>
-
+        <div id="logo">
+          <h1 style="color: white;">DE VILL</h1>
+        </div>
       </footer>
 
-    </div>
-    <!--footer-->
+    </div><!--footer-->
 
 
-    <!--javascript -->
+      <!--javascript -->
 
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!--PermissãoModulo-->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <!--PermissãoModulo-->
 
-    <script>
-      function openNav() {
-        document.getElementById("Sb").style.width = "250px";
-        document.getElementById("topnav").style.marginLeft = "250px";
-        document.getElementsByClassName("sumir")
-      }
-
-      function closeNav() {
-        document.getElementById("Sb").style.width = "0";
-        document.getElementById("topnav").style.marginLeft = "0";
-      }
-
-      function sumir() {
-        var x = document.getElementById('links');
-        if (x.style.display === 'block') {
-          x.style.display = 'none';
+      <script>
+        function openNav() {
+          document.getElementById("Sb").style.width = "250px";
+          document.getElementById("topnav").style.marginLeft = "250px";
+          document.getElementsByClassName("sumir")
         }
-        else {
-          x.style.display = 'block'
+
+        function closeNav() {
+          document.getElementById("Sb").style.width = "0";
+          document.getElementById("topnav").style.marginLeft = "0";
         }
-      }
 
-
-    </script>
-
-
-
-</body>
-
+        function sumir() {
+          var x = document.getElementById('links');
+          if (x.style.display === 'block') {
+            x.style.display = 'none';
+          }
+          else {
+            x.style.display = 'block'
+          }
+        }
+      </script>
+  </body>
 </html>

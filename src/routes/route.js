@@ -3,6 +3,7 @@ const controller = require('../controllers/controller')
 const router = express.Router()
 
 router.get('/Cadastro', controller.renderIncluir)
+router.post('/criarPost', controller.criarpost)
 router.post('/incluirUsuario',controller.incluir)
 router.get('/Destaques', controller.Destaques)
 router.get('/', controller.home)
